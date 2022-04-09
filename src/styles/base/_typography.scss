@@ -1,0 +1,76 @@
+$primary-text: "Bellefair", serif;
+$secondary-text: "Barlow Condensed", sans-serif;
+
+h1 {
+  font-family: $primary-text;
+  font-size: 15rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: $primary-text;
+  font-size: 10rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: $primary-text;
+  font-size: 5.6rem;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: $primary-text;
+  font-size: 3.2rem;
+  text-transform: uppercase;
+}
+
+.text-heading-h5 ,h5 {
+  font-family: $secondary-text;
+  font-size: 2.8rem;
+  letter-spacing: 0.475rem;
+  text-transform: uppercase;
+  color: $color-purple;
+}
+
+.text-subheading1 {
+  font-family: $primary-text;
+  font-size: 2.8rem;
+}
+
+.text-subheading2 {
+  font-family: $secondary-text;
+  font-size: 1.4rem;
+  letter-spacing: 0.235rem;
+}
+
+.text-nav {
+  font-family: $secondary-text;
+  font-size: 1.6rem;
+  letter-spacing: 0.27rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+.text-color__white{
+  color: white;
+}
+
+.text-color__black{
+  color: black;
+}
+
+.text-font__400{
+  font-weight: 400;
+}
+
+.text-case__upper{
+  text-transform: uppercase;
+}
+
+.text-case__normal{
+  text-transform: none;
+}

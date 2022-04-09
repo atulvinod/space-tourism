@@ -1,0 +1,153 @@
+$BOTTOM_BORDER: 3px;
+
+header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .icon {
+    cursor: pointer;
+  }
+}
+
+.nav {
+  &-link__active {
+    border-bottom: $BOTTOM_BORDER solid $color-white !important;
+  }
+
+  &-links {
+    display: flex;
+    list-style-type: none;
+
+    .link {
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: $BOTTOM_BORDER solid transparent;
+      font-family: $secondary-text;
+
+      &:hover {
+        border-bottom: $BOTTOM_BORDER solid $color-grey;
+      }
+    }
+  }
+
+  li {
+    @extend .text-nav;
+  }
+}
+
+@include respond(default) {
+  .nav {
+    &-drawer {
+      position: absolute;
+      width: 67.5%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      backdrop-filter: blur(20px);
+
+      transition: width;
+      animation: slideIn 1s ease-in-out;
+
+      &-close-icon {
+        margin: 6.6rem 5.2rem 0rem auto;
+        width: fit-content;
+      }
+    }
+
+    &-links {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 6.4rem auto auto 6.4rem;
+
+      .link {
+        margin-top: 6.4rem;
+        display: flex;
+        align-items: center;
+        font-size: 3.03rem;
+      }
+    }
+  }
+}
+
+.header {
+  &-sm {
+    display: none;
+
+    @include respond(default) {
+      display: flex;
+      align-items: center;
+      padding: 3.4rem;
+    }
+  }
+
+  &-lg {
+    @include respond(tab-desktop) {
+      margin-top: 4rem;
+      backdrop-filter: blur(8px);
+    }
+
+    @include respond(default) {
+      display: none;
+    }
+
+    height: 9.6rem;
+    padding-left: 3.9rem;
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex: 1;
+    }
+
+    .divider {
+      display: none;
+
+      @include respond(tab-desktop) {
+        display: block;
+      }
+
+      flex: 1;
+      background-color: rgba(255, 255, 255, 0.25);
+      height: 1px;
+      margin-right: -4rem;
+      margin-left: 6.4rem;
+    }
+
+    .nav {
+      display: flex;
+      height: 100%;
+      background-color: rgb(21, 25, 35);
+      padding: 0 4.6rem 0 4.8rem;
+
+      @include respond(tab-desktop) {
+        background-color: transparent;
+        backdrop-filter: blur(8px);
+        padding: 0 10.2rem 0 15.8rem;
+      }
+
+      &-links {
+        .link {
+          color: $color-white;
+          text-decoration: none;
+          text-transform: uppercase;
+          display: flex;
+          margin: 0 2rem;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      margin-right: -67.5%;
+    }
+    100% {
+      margin-right: 0%;
+    }
+  }
+}

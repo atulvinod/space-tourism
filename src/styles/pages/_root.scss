@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  color: white;
+}
+
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include respond(default) {
+    font-size: 33.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $primary-text;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-self: stretch;
+  background-color: black;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+}
+
+.page-content-container {
+  padding-top: 9.5rem;
+
+  @include respond(tab-desktop) {
+    padding-top: 13rem;
+  }
+
+  display: flex;
+  flex-grow: 1;
+
+  > {
+    flex-grow: 1;
+  }
+}
+
+@font-face {
+  font-family: "Bellefair";
+  src: url("../../assets/fonts/Bellefair-Regular.ttf");
+}

@@ -1,0 +1,23 @@
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-24{
+    margin-top: 2.4rem;
+}
+
+.mb-24{
+    margin-bottom: 2.4rem;
+}
+
+.my-24{
+    margin-top: 2.4rem;
+    margin-bottom :2.4rem;
+}
+
+.container__expanded-y{
+    display: flex;
+    flex-direction: column;
+}

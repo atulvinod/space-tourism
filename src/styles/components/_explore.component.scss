@@ -1,0 +1,38 @@
+.explore {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond(tab-desktop) {
+    align-items: end;
+    justify-content: end;
+  }
+  
+  &-button {
+    width: 45rem;
+    height: 45rem;
+    border-radius: 100rem;
+    transition: all;
+    transition-duration: 101ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+      width: 27.4rem;
+      height: 27.4rem;
+      background-color: #ffffff;
+      border-radius: 100rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+    }
+
+    &:hover {
+      background-color: rgba($color: #ffffff, $alpha: 0.1);
+      cursor: pointer;
+    }
+  }
+}
