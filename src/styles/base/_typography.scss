@@ -26,7 +26,8 @@ h4 {
   text-transform: uppercase;
 }
 
-.text-heading-h5 ,h5 {
+.text-heading-h5,
+h5 {
   font-family: $secondary-text;
   font-size: 2.8rem;
   letter-spacing: 0.475rem;
@@ -51,26 +52,33 @@ h4 {
   letter-spacing: 0.27rem;
 }
 
+.text-nav-link {
+  color: $color-white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $secondary-text;
+}
+
 p {
   font-size: 1.8rem;
 }
 
-.text-color__white{
+.text-color__white {
   color: white;
 }
 
-.text-color__black{
+.text-color__black {
   color: black;
 }
 
-.text-font__400{
+.text-font__400 {
   font-weight: 400;
 }
 
-.text-case__upper{
+.text-case__upper {
   text-transform: uppercase;
 }
 
-.text-case__normal{
+.text-case__normal {
   text-transform: none;
 }

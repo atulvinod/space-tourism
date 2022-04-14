@@ -1,60 +1,53 @@
 .home-screen {
-    background-image: url("../../assets/images/home/background-home-mobile.jpg");
-  
-    @include respond(tab-port) {
-      background-image: url("../../assets/images/home/background-home-tablet.jpg");
-    }
-    @include respond(tab-desktop) {
-      background-image: url("../../assets/images/home/background-home-desktop.jpg");
-    }
-  
-    background-size: cover;
-    background-repeat: no-repeat;
-  
-    .content {
-      &-container {
-        margin: 11.6rem 4rem 0rem 4rem;
-        display: flex;
-        justify-content: center;
-  
-        @include respond(tab-desktop) {
-          margin: 0rem 6rem 4.1rem 16.4rem;
-        }
+  @include page-background-image(
+    "../../assets/images/home/background-home-mobile.jpg",
+    "../../assets/images/home/background-home-tablet.jpg",
+    "../../assets/images/home/background-home-desktop.jpg"
+  );
+
+  .content {
+    &-container {
+      margin: 11.6rem 4rem 0rem 4rem;
+      display: flex;
+      justify-content: center;
+
+      @include respond(tab-desktop) {
+        margin: 0rem 6rem 4.1rem 16.4rem;
       }
-  
-      &-row {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: min-content;
-        @include respond(tab-desktop) {
-          flex-direction: row;
-          text-align: start;
-          margin-top: 25.1rem;
-        }
+    }
+
+    &-row {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: min-content;
+      @include respond(tab-desktop) {
+        flex-direction: row;
+        text-align: start;
+        margin-top: 25.1rem;
       }
-  
-      &-main-text {
-        font-family: $secondary-text;
-        letter-spacing: 0.475rem;
-        color: $color-purple;
-        line-height: 3.2rem;
-        font-size: 1.6rem;
-  
-        @include respond(tab-port) {
-          margin: 0 14.1rem;
-        }
-        @include respond(default) {
-          margin: auto 6.4%;
-          font-size: 2.8rem;
-        }
-  
-        @include respond(tab-desktop) {
-          margin: 0 17rem 0 0;
-        }
+    }
+
+    &-main-text {
+      font-family: $secondary-text;
+      letter-spacing: 0.475rem;
+      color: $color-purple;
+      line-height: 3.2rem;
+      font-size: 1.6rem;
+
+      @include respond(tab-port) {
+        margin: 0 14.1rem;
+      }
+      @include respond(default) {
+        margin: auto 6.4%;
+        font-size: 2.8rem;
+      }
+
+      @include respond(tab-desktop) {
+        margin: 0 17rem 0 0;
       }
     }
   }
-  
+}

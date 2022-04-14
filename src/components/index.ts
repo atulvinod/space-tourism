@@ -1,3 +1,2 @@
-export * from "./navbar";
-export * from "./app-root";
-export * from "./explore";
+export * from "./shared";
+export * from "./destination";

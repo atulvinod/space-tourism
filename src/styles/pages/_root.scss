@@ -13,7 +13,9 @@ html {
   flex-direction: column;
 
   // This defines what 1rem is
-  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  //1 rem = 10px; 10px/16px = 62.5%
+  font-size: 62.5%;
+  
 
   @include respond(default) {
     font-size: 33.5%;
@@ -38,7 +40,7 @@ body {
 }
 
 .page-content-container {
-  padding-top: 9.5rem;
+  padding-top: 15.5rem;
 
   @include respond(tab-desktop) {
     padding-top: 13rem;

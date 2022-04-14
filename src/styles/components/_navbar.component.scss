@@ -20,9 +20,7 @@ header {
     list-style-type: none;
 
     .link {
-      color: $color-white;
-      text-decoration: none;
-      text-transform: uppercase;
+      @extend .text-nav-link;
       border-bottom: $BOTTOM_BORDER solid transparent;
       font-family: $secondary-text;
 
@@ -131,9 +129,7 @@ header {
 
       &-links {
         .link {
-          color: $color-white;
-          text-decoration: none;
-          text-transform: uppercase;
+          @extend .text-nav-link;
           display: flex;
           margin: 0 2rem;
           align-items: center;

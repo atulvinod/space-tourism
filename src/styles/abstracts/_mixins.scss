@@ -19,3 +19,15 @@
     }
   }
 }
+
+@mixin page-background-image($mobile, $tablet, $desktop) {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url($mobile);
+  @include respond(tab-port) {
+    background-image: url($tablet);
+  }
+  @include respond(tab-desktop) {
+    background-image: url($desktop);
+  }
+}

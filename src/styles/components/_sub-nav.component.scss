@@ -1,0 +1,22 @@
+.subnav {
+  width: fit-content;
+  a {
+    @extend .text-nav-link;
+    font-weight: 400;
+    font-size: 2.5rem;
+
+    @include respond(default){
+        font-size: 2.8rem;
+        padding: 1.6rem;
+
+    }
+
+    &:not(:last-child){
+        margin-right: 3.6rem;
+    }
+
+    &:hover {
+        border-bottom: $BOTTOM_BORDER solid $color-grey;
+      }
+  }
+}

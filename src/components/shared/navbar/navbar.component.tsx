@@ -1,9 +1,9 @@
 import { Fragment, useContext } from "react";
-import { ReactComponent as Logo } from "../../assets/images/shared/logo.svg";
-import { ReactComponent as IconClose } from "../../assets/images/shared/icon-close.svg";
-import { ReactComponent as IconHamburger } from "../../assets/images/shared/icon-hamburger.svg";
+import { ReactComponent as Logo } from "../../../assets/images/shared/logo.svg";
+import { ReactComponent as IconClose } from "../../../assets/images/shared/icon-close.svg";
+import { ReactComponent as IconHamburger } from "../../../assets/images/shared/icon-hamburger.svg";
 import { NavBarLink } from "./nav-link.component";
-import { AppContext } from "../../context";
+import { AppContext } from "../../../context";
 
 export const Navbar = () => {
   const { isNavBarOpen, setIsNavBarOpen } = useContext(AppContext);
