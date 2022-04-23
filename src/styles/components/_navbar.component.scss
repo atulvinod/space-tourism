@@ -58,13 +58,13 @@ header {
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      margin: 6.4rem auto auto 6.4rem;
+      margin: 3.2rem auto auto 3.2rem;
 
       .link {
-        margin-top: 6.4rem;
+        margin-top: 3.2rem;
         display: flex;
         align-items: center;
-        font-size: 3.03rem;
+        font-size: 1.6rem;
       }
     }
   }
@@ -77,7 +77,7 @@ header {
     @include respond(default) {
       display: flex;
       align-items: center;
-      padding: 3.4rem;
+      padding: 2.4rem;
     }
   }
 

@@ -1,16 +1,22 @@
+import { FC } from "react";
 import { NavLink } from "react-router-dom";
 
-export const NavBarLink = (props: any) => {
-  const { to, linktext } = props;
+export type NavBarLinkProps = {
+  to: string;
+  linktext: string;
+};
+
+export const NavBarLink: FC<NavBarLinkProps> = (props: any) => {
   return (
     <NavLink
-      to={to}
+      to={props.to}
       className={({ isActive }) =>
-      isActive ? "link nav-link__active" : 'link'
-    }      {...props}
+        isActive ? "link nav-link__active" : "link"
+      }
+      {...props}
     >
       <li>
-        <span>{linktext}</span>
+        <span>{props.linktext}</span>
       </li>
     </NavLink>
   );

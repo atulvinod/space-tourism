@@ -1,6 +1,11 @@
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import { DestinationScreen, HomeScreen } from "./screens";
+import {
+  CrewScreen,
+  DestinationScreen,
+  HomeScreen,
+  TechnologyScreen,
+} from "./screens";
 import { AppRoot } from "./components";
 
 const App = () => {
@@ -10,6 +15,8 @@ const App = () => {
         <Route index element={<HomeScreen />} />
         <Route path="/destination/:pagename" element={<DestinationScreen />} />
         <Route path="/destination" element={<DestinationScreen />} />
+        <Route path="/crew" element={<CrewScreen />} />
+        <Route path="/technology" element={<TechnologyScreen />} />
       </Route>
     </Routes>
   );

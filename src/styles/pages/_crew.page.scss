@@ -1,0 +1,50 @@
+.crew {
+
+  
+  &-screen {
+    @include page-background-image(
+      "../../assets/images/crew/background-crew-mobile.jpg",
+      "../../assets/images/crew/background-crew-tablet.jpg",
+      "../../assets/images/crew/background-crew-desktop.jpg"
+    );
+
+    .designation{
+      color: rgba(255,255,255,0.5);
+    }
+  
+    .name{
+      margin-top: 0.8rem;
+    }
+
+    .description{
+      margin-top: 1.6rem;
+      margin-bottom: 10.4rem;
+      font-family: $secondary-text;
+      color: $color-purple;
+      line-height: 2.5rem;
+      font-size: 1.5rem;
+    }
+
+    .content{
+
+      &-row{
+        width: 100%;
+      }
+
+      &-main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &-container{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 2.4rem;
+      }
+    }
+  }
+
+ 
+}

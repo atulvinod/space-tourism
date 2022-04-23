@@ -1,17 +1,22 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ImageView, PlanetDetails, SubNavbar } from "../../components";
+import {
+  ImageView,
+  PageTitle,
+  PlanetDetails,
+  SubNavbar,
+} from "../../components";
 import { NavPathModel, PlanetDetailsModel } from "../../models";
 
 export const DestinationScreen = () => {
   const params = useParams();
   const navigate = useNavigate();
-  
-  useEffect(()=>{
-    if(!params.pagename){
-      navigate('/destination/moon')
+
+  useEffect(() => {
+    if (!params.pagename) {
+      navigate("/destination/moon");
     }
-  },[])
+  }, []);
 
   const getPlanetDetails = (planet: string) => {
     switch (planet) {
@@ -51,20 +56,21 @@ export const DestinationScreen = () => {
     <div className="destination-screen page-content-container">
       <div className="content-container">
         <div className="destination-image-view">
-          <h5 className="text-color__white text-font__400">
-            Pick your destination
-          </h5>
+          <PageTitle pageTitle="Pick Your destination" pageNumber="01" />
           <ImageView />
         </div>
-        <div className="destination-subnav">
-          <SubNavbar
-            paths={[
-              new NavPathModel("/destination/moon", "moon"),
-              new NavPathModel("/destination/mars", "mars"),
-              new NavPathModel("/destination/europa", "europa"),
-              new NavPathModel("/destination/titan", "titan"),
-            ]}
-          />
+        <div className="destination-details-container">
+
+          <div className="destination-subnav-container">
+            <SubNavbar
+              paths={[
+                new NavPathModel("/destination/moon", "moon"),
+                new NavPathModel("/destination/mars", "mars"),
+                new NavPathModel("/destination/europa", "europa"),
+                new NavPathModel("/destination/titan", "titan"),
+              ]}
+            />
+          </div>
           <div className="destination-details">
             <PlanetDetails
               planetDetails={getPlanetDetails(params.pagename as string)}

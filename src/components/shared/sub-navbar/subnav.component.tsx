@@ -1,13 +1,16 @@
-import PropTypes from "prop-types";
+import { FC } from "react";
 
 import { NavLink } from "react-router-dom";
 import { NavPathModel } from "../../../models";
 
-export const SubNavbar = (props: any) => {
-  const { paths }: { paths: NavPathModel[] } = props;
+export type SubNavBarProps = {
+  paths: NavPathModel[];
+};
+
+export const SubNavbar: FC<SubNavBarProps> = (props) => {
   return (
     <div className="subnav">
-      {paths.map((path) => (
+      {props.paths.map((path) => (
         <NavLink
           to={path.path}
           key={path.path}
@@ -20,8 +23,4 @@ export const SubNavbar = (props: any) => {
       ))}
     </div>
   );
-};
-
-SubNavbar.propTypes = {
-  paths: PropTypes.arrayOf(PropTypes.instanceOf(NavPathModel)).isRequired,
 };

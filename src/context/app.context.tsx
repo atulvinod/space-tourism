@@ -1,10 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, FC, useState } from "react";
 import { AppContextModel } from "../models";
-
 
 export const AppContext = createContext(new AppContextModel({}));
 
-export const AppContextProvider = (props: any) => {
+export const AppContextProvider: FC = (props) => {
   const { children } = props;
   const [isNavBarOpen, setNavbarOpen] = useState(false);
   const setIsNavBarOpen = (isNavBarOpen: boolean) => {
