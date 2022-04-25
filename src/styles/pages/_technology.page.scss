@@ -1,0 +1,7 @@
+.technology-screen{
+    @include page-background-image(
+        "../../assets/images/technology/background-technology-mobile.jpg",
+        "../../assets/images/technology/background-technology-tablet.jpg",
+        "../../assets/images/technology/background-technology-desktop.jpg"
+    );
+}
