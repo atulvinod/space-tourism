@@ -1,0 +1,53 @@
+.image-carousel-large-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .image-carousel {
+    width: 100%;
+
+    &-slide-landscape {
+      width: 100%;
+    }
+    
+    &-slide-potrait {
+      height: 17rem;
+      width: 100vw;
+    }
+
+    &-indicator {
+      height: 4rem;
+      width: 4rem;
+      margin-right: 1.6rem;
+      display: flex;
+      place-items: center center;
+
+      cursor: pointer;
+
+      h4 {
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: inherit;
+      }
+
+      &-active {
+        color: black;
+        background-color: white;
+      }
+      &-inactive {
+        color: white;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+      }
+    }
+
+    &-slides-indicator {
+      margin-top: 3.4rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
