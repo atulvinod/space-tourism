@@ -8,7 +8,7 @@ import {
 } from "../../components";
 import { NavPathModel, PlanetDetailsModel } from "../../models";
 
-export const DestinationScreen = () => {
+export const DestinationPage = () => {
   const params = useParams();
   const navigate = useNavigate();
 

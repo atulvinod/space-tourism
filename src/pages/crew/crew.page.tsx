@@ -5,7 +5,8 @@ import mark from "../../assets/images/crew/image-mark-shuttleworth.png";
 import victor from "../../assets/images/crew/image-victor-glover.png";
 import { useState } from "react";
 import { CrewModel } from "../../models";
-export const CrewScreen = () => {
+
+export const CrewPage = () => {
   const [currentImageIndex, setCurrentImage] = useState(0);
 
   const crewDetails = [

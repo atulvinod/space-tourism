@@ -1,22 +1,22 @@
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import {
-  CrewScreen,
-  DestinationScreen,
-  HomeScreen,
-  TechnologyScreen,
-} from "./screens";
+  CrewPage,
+  DestinationPage,
+  HomePage,
+  TechnologyPage,
+} from "./pages";
 import { AppRoot } from "./components";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<AppRoot />}>
-        <Route index element={<HomeScreen />} />
-        <Route path="/destination/:pagename" element={<DestinationScreen />} />
-        <Route path="/destination" element={<DestinationScreen />} />
-        <Route path="/crew" element={<CrewScreen />} />
-        <Route path="/technology" element={<TechnologyScreen />} />
+        <Route index element={<HomePage />} />
+        <Route path="/destination/:pagename" element={<DestinationPage />} />
+        <Route path="/destination" element={<DestinationPage />} />
+        <Route path="/crew" element={<CrewPage />} />
+        <Route path="/technology" element={<TechnologyPage />} />
       </Route>
     </Routes>
   );

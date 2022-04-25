@@ -1,6 +1,6 @@
 import { Explore } from "../../components";
 
-export const HomeScreen = () => {
+export const HomePage = () => {
   return (
     <div className="home-screen page-content-container">
       <div className="content-container">
