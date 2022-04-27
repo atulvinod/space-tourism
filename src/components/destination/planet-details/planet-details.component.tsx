@@ -12,17 +12,17 @@ export const PlanetDetails: FC<PlanetDetailsProp> = (props: any) => {
       <h2 className="planet-details-heading">
         {props.planetDetails.planetName}
       </h2>
-      <h5 className="main-text">{props.planetDetails.description}</h5>
+      <p className="text-body">{props.planetDetails.description}</p>
       <div className="details-divider" />
       <div className="details-stat-container">
         <div className="details-stat">
-          <h5>Avg. Distance</h5>
-          <h3> {props.planetDetails.avgDistance}</h3>
+          <span className="text-subheading__2 d-block">Avg. Distance</span>
+          <span className="text-subheading__1 d-block my-16"> {props.planetDetails.avgDistance}</span>
         </div>
 
         <div className="details-stat">
-          <h5>Est. Travel time</h5>
-          <h3>{props.planetDetails.travelTime}</h3>
+          <span className="text-subheading__2 d-block">Est. Travel time</span>
+          <span className="text-subheading__1 d-block my-16">{props.planetDetails.travelTime}</span>
         </div>
       </div>
     </div>

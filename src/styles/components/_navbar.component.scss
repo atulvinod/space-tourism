@@ -26,6 +26,7 @@ header {
 
       &:hover {
         border-bottom: $BOTTOM_BORDER solid $color-grey;
+        color: $color-grey;
       }
     }
   }
@@ -35,7 +36,7 @@ header {
   }
 }
 
-@include respond(default) {
+@include responsive(default) {
   .nav {
     &-drawer {
       position: absolute;
@@ -73,21 +74,23 @@ header {
 .header {
   &-sm {
     display: none;
+    display: flex;
+    align-items: center;
+    padding: 2.4rem;
 
-    @include respond(default) {
-      display: flex;
-      align-items: center;
-      padding: 2.4rem;
+    @include responsive(tablet){
+      display: none;
     }
+
   }
 
   &-lg {
-    @include respond(tab-desktop) {
+    @include responsive(desktop) {
       margin-top: 4rem;
       backdrop-filter: blur(8px);
     }
 
-    @include respond(default) {
+    @include responsive(default) {
       display: none;
     }
 
@@ -104,7 +107,7 @@ header {
     .divider {
       display: none;
 
-      @include respond(tab-desktop) {
+      @include responsive(desktop) {
         display: block;
       }
 
@@ -121,7 +124,7 @@ header {
       background-color: rgb(21, 25, 35);
       padding: 0 4.6rem 0 4.8rem;
 
-      @include respond(tab-desktop) {
+      @include responsive(desktop) {
         background-color: transparent;
         backdrop-filter: blur(8px);
         padding: 0 10.2rem 0 15.8rem;

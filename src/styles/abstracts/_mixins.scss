@@ -1,20 +1,21 @@
-@mixin respond($breakpoint) {
+@mixin responsive($breakpoint) {
+  //only to be used when necessary
   @if $breakpoint == default {
-    @media only screen and (max-width: 51em) {
+    @media only screen and (max-width: 768px) {
       @content;
     }
   }
 
-  @if $breakpoint == tab-port {
-    @media only screen and (min-width: 51em) {
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 768px) {
       // from 768px
       @content;
     }
   }
 
-  @if $breakpoint == tab-desktop {
+  @if $breakpoint == desktop {
     // from 1440px
-    @media only screen and (min-width: 64em) {
+    @media only screen and (min-width: 1440px) {
       @content;
     }
   }
@@ -24,10 +25,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url($mobile);
-  @include respond(tab-port) {
+  @include responsive(tablet) {
     background-image: url($tablet);
   }
-  @include respond(tab-desktop) {
+  @include responsive(desktop) {
     background-image: url($desktop);
   }
 }

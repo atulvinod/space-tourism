@@ -2,6 +2,10 @@
   &-image-carousel {
     margin-top: 3.4rem;
     width: 100%;
+
+    @include responsive(desktop) {
+      order: 3;
+    }
   }
 
   &-screen {
@@ -11,26 +15,48 @@
       "../../assets/images/technology/background-technology-desktop.jpg"
     );
 
+    .page-title-container {
+      @include responsive(tablet) {
+        margin: 0 3.85rem;
+      }
+
+      @include responsive(desktop) {
+        margin-left: 16.65rem;
+      }
+    }
+
     .content {
       &-container {
+        @include responsive(tablet) {
+          margin-top: 4rem;
+        }
+      }
+
+      &-main {
         display: flex;
         flex-direction: column;
         align-items: center;
         flex: 1;
 
+        @include responsive(desktop) {
+          flex-direction: row;
+          margin-left: 16.5rem;
+          margin-bottom: 10.1rem;
+          align-items: center;
+          margin-top: 4.4rem;
+        }
+
         .title {
-          margin-top: .9rem;
-          color: $color-purple;
+          margin-top: 0.9rem;
         }
 
         .description {
           margin-top: 1.6rem;
           margin-bottom: 10.4rem;
-          font-family: $secondary-text;
-          color: $color-purple;
-          line-height: 2.5rem;
-          font-size: 1.5rem;
-          font-weight: 400;
+
+          @include responsive(desktop) {
+            margin-bottom: 0rem;
+          }
         }
       }
     }
@@ -40,6 +66,17 @@
       align-items: center;
       flex-direction: column;
       margin: 2.6rem 3.4rem 8.1rem 3.4rem;
+      font-family: "Barlow";
+
+      @include responsive(tablet) {
+        margin: 4.4rem 15.5rem 9.7rem 15.5rem;
+      }
+
+      @include responsive(desktop) {
+        order: 2;
+        margin: 0rem 5rem 0rem 8rem;
+        align-items: start;
+      }
     }
   }
 }

@@ -1,8 +1,13 @@
 .planet-image-view {
   width: 17rem;
   height: 17rem;
+  
+  @include responsive(tablet) {
+    width: 30rem;
+    height: 30rem;
+  }
 
-  @include respond(tab-desktop){
+  @include responsive(desktop) {
     width: 55rem;
     height: 55rem;
   }

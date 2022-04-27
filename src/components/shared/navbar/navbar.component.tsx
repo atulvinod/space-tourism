@@ -5,16 +5,32 @@ import { ReactComponent as IconHamburger } from "../../../assets/images/shared/i
 import { NavBarLink } from "./nav-link.component";
 import { AppContext } from "../../../context";
 
+type NavBarLinkModel = {
+  pathTo: string;
+  linkText: string;
+};
+
 export const Navbar = () => {
   const { isNavBarOpen, setIsNavBarOpen } = useContext(AppContext);
-  const navBarLinks = (
-    <ul className="nav-links">
-      <NavBarLink to={"/"} linktext="00 Home" />
-      <NavBarLink to={"/destination"} linktext="01 Destination" />
-      <NavBarLink to={"/crew"} linktext="02 Crew" />
-      <NavBarLink to={"/technology"} linktext="03 Technology" />
-    </ul>
-  );
+
+  const navBarLinks: NavBarLinkModel[] = [
+    {
+      linkText: "Home",
+      pathTo: "/",
+    },
+    {
+      linkText: "Destination",
+      pathTo: "/destination",
+    },
+    {
+      linkText: "Crew",
+      pathTo: "/crew",
+    },
+    {
+      linkText: "Technology",
+      pathTo: "/technology",
+    },
+  ];
 
   return (
     <Fragment>
@@ -23,7 +39,13 @@ export const Navbar = () => {
           <Logo />
           <div className="divider"></div>
         </div>
-        <nav className="nav">{navBarLinks}</nav>
+        <nav className="nav">
+          <ul className="nav-links">
+            {navBarLinks.map((e, i, a) => (
+              <NavBarLink key={i} linktext={e.linkText} to={e.pathTo} />
+            ))}
+          </ul>
+        </nav>
       </header>
 
       <header className="header-sm">
@@ -31,20 +53,26 @@ export const Navbar = () => {
           <Logo />
         </div>
         <IconHamburger className="icon" onClick={() => setIsNavBarOpen(true)} />
-
-        
       </header>
       {isNavBarOpen && (
-          <div className="nav-drawer">
-            <div className="nav-drawer-close-icon">
-              <IconClose
-                onClick={() => setIsNavBarOpen(!isNavBarOpen)}
-                className="icon"
-              />
-            </div>
-            {navBarLinks}
+        <div className="nav-drawer">
+          <div className="nav-drawer-close-icon">
+            <IconClose
+              onClick={() => setIsNavBarOpen(!isNavBarOpen)}
+              className="icon"
+            />
           </div>
-        )}
+          <ul className="nav-links">
+            {navBarLinks.map((e, i, a) => (
+              <NavBarLink
+                key={i}
+                linktext={`0${i} ${e.linkText}`}
+                to={e.pathTo}
+              />
+            ))}
+          </ul>
+        </div>
+      )}
     </Fragment>
   );
 };

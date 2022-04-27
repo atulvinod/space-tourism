@@ -1,4 +1,8 @@
-import { ImageCarousel, PageTitle } from "../../components";
+import {
+  CarouselIndicatorSm,
+  ImageCarousel,
+  PageTitle,
+} from "../../components";
 import douglashurley from "../../assets/images/crew/image-douglas-hurley.png";
 import anousheh from "../../assets/images/crew/image-anousheh-ansari.png";
 import mark from "../../assets/images/crew/image-mark-shuttleworth.png";
@@ -7,19 +11,19 @@ import { useState } from "react";
 import { CrewModel } from "../../models";
 
 export const CrewPage = () => {
-  const [currentImageIndex, setCurrentImage] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const crewDetails = [
     new CrewModel(
       "commander",
       "douglas hurley",
-      "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
+      "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
       douglashurley
     ),
     new CrewModel(
       "mission specialist",
       "mark shuttleworth",
-      "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
+      "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
       mark
     ),
     new CrewModel(
@@ -40,17 +44,34 @@ export const CrewPage = () => {
     <div className="crew-screen page-content-container">
       <div className="content-container">
         <div className="content-row">
+          <div className="page-title-container">
+            <PageTitle pagetitle="Meet your crew" pagenumber="02" />
+          </div>
           <div className="content-main">
-            <PageTitle pageTitle="Meet your crew" pageNumber="02" />
             <ImageCarousel
               images={crewDetails.map((crew) => crew.imagePath)}
-              onImageChangeCallback={(index) => setCurrentImage(index)}
+              currentImage={currentIndex}
             />
-            <h4 className="text-font__400 designation"> {crewDetails[currentImageIndex].designation}</h4>
-            <h3 className="text-font__400 name">{crewDetails[currentImageIndex].name}</h3>
-            <p className="description">
-              {crewDetails[currentImageIndex].description}
-            </p>
+
+            <div className="details-container">
+              <CarouselIndicatorSm
+                currentSlide={currentIndex}
+                totalSlides={crewDetails.length}
+                imageChangeCallback={(index) => setCurrentIndex(index)}
+              />
+              <div className="details">
+                <h4 className="text-font__400 designation">
+                  {" "}
+                  {crewDetails[currentIndex].designation}
+                </h4>
+                <h3 className="text-font__400 name">
+                  {crewDetails[currentIndex].name}
+                </h3>
+                <p className="description text-body">
+                  {crewDetails[currentIndex].description}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

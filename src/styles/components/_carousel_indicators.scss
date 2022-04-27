@@ -1,0 +1,102 @@
+.carousel-indicator {
+  &-sm {
+    .indicators-row {
+      display: flex;
+      align-items: center;
+      margin-top: 3.2rem;
+      justify-content: center;
+
+      @include responsive(tablet) {
+        margin: 4rem 0rem;
+      }
+    }
+
+    .indicator {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100px;
+      margin-right: 1.6rem;
+      cursor: pointer;
+
+      @include responsive(desktop) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &-inactive {
+        background-color: rgba(255, 255, 255, 0.17);
+      }
+
+      &-active {
+        background-color: white;
+      }
+    }
+  }
+
+  &-lg {
+    .indicators-row {
+      margin-top: 3.4rem;
+      display: flex;
+      justify-content: center;
+
+      @include responsive(tablet) {
+        margin-top: 5.6rem;
+      }
+      
+      @include responsive(desktop){
+        flex-direction: column;
+        margin-top: 0rem;
+        order: 1;
+      }
+    }
+
+    .indicator {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 100px;
+
+      margin-right: 1.6rem;
+      display: flex;
+      place-items: center center;
+      cursor: pointer;
+
+      @include responsive(tablet) {
+        height: 6rem;
+        width: 6rem;
+      }
+
+      @include responsive(desktop) {
+        height: 8rem;
+        width: 8rem;
+        margin-bottom: 3.2rem;
+        margin-right: 0rem;
+      }
+
+      &-active {
+        color: black;
+        background-color: white;
+      }
+
+      &-inactive {
+        color: white;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        &:hover{
+          border: 1px solid rgba(255, 255, 255, 1);
+
+        }
+      }
+    }
+
+    h4 {
+      font-weight: 400;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: inherit;
+    }
+  }
+}

@@ -56,11 +56,12 @@ export const DestinationPage = () => {
     <div className="destination-screen page-content-container">
       <div className="content-container">
         <div className="destination-image-view">
-          <PageTitle pageTitle="Pick Your destination" pageNumber="01" />
+          <div className="page-title">
+            <PageTitle pagetitle="Pick Your destination" pagenumber="01" />
+          </div>
           <ImageView />
         </div>
         <div className="destination-details-container">
-
           <div className="destination-subnav-container">
             <SubNavbar
               paths={[
