@@ -6,7 +6,6 @@ export const Explore = () => {
           <h4 className="text-color__black text-font__400">Explore</h4>
         </div>
         <div className="background">
-          
         </div>
       </div>
     </div>
